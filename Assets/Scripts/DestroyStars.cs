@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyStars : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +17,12 @@ public class DestroyStars : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            ScoreManager.score++;
+        }
+
     }
 }
