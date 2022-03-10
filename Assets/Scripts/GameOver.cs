@@ -7,10 +7,11 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject backgroundMusic;
+    public BackgroundMusic m;
 
     private void Start()
     {
-        //backgroundMusic = GameObject.FindGameObjectWithTag("Music");
+        backgroundMusic = GameObject.FindGameObjectWithTag("Music");
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class GameOver : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             //backgroundMusic.GetComponent<AudioSource>().Stop();
+            Destroy(backgroundMusic);
         }
     }
 
@@ -28,5 +30,6 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //backgroundMusic.GetComponent<AudioSource>().Play();
         ScoreManager.score = 0;
+        m.Awake();
     }
 }

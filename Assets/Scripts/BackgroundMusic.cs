@@ -6,7 +6,7 @@ public class BackgroundMusic : MonoBehaviour
 {
 
     public static BackgroundMusic music;
-    private void Awake()
+    public void Awake()
     {
         if (music == null)
         {
