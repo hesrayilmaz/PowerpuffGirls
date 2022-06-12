@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnStars : MonoBehaviour
 {
-
     public GameObject star;
     public float minX;
     public float maxX;
@@ -29,7 +28,6 @@ public class SpawnStars : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         Instantiate(star, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
-
 }
 
 }

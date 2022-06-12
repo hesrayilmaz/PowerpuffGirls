@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LoopingBackground : MonoBehaviour
 {
-
     public float backgroundSpeed;
     public Renderer backgroundRenderer;
-
 
     // Update is called once per frame
     void Update()

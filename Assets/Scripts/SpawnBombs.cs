@@ -28,6 +28,5 @@ public class SpawnBombs : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         Instantiate(bomb, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
-
     }
 }

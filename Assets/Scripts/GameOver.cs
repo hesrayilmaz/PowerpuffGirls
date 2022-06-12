@@ -20,7 +20,6 @@ public class GameOver : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
-            //backgroundMusic.GetComponent<AudioSource>().Stop();
             Destroy(backgroundMusic);
         }
     }
@@ -28,7 +27,10 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //backgroundMusic.GetComponent<AudioSource>().Play();
+        if (ScoreManager.score > HighScoreManager.highScore)
+        {
+            HighScoreManager.highScore = ScoreManager.score;
+        }
         ScoreManager.score = 0;
         m.Awake();
     }

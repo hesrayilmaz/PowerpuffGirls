@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class HighScoreManager : MonoBehaviour
 {
-    public Text scoreText;
-    public static int score;
-
+    public Text highScoreText;
+    public static int highScore;
+   
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        highScoreText = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + score;
+        highScoreText.text = "High Score: " + highScore;
     }
 }

@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     {
         float directionY = Input.GetAxisRaw("Vertical");
         playerDirection = new Vector2(0, directionY).normalized;
-
     }
     
     //for the physics frame (rigidbody)
