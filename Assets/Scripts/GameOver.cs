@@ -7,6 +7,9 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject backgroundMusic;
+    public GameObject score;
+    public GameObject highScore;
+
     public BackgroundMusic m;
 
     private void Start()
@@ -20,6 +23,8 @@ public class GameOver : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
+            score.SetActive(false);
+            highScore.SetActive(false);
             Destroy(backgroundMusic);
         }
     }
