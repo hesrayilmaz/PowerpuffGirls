@@ -25,6 +25,7 @@ public class GameOver : MonoBehaviour
             gameOverPanel.SetActive(true);
             score.SetActive(false);
             highScore.SetActive(false);
+            
             Destroy(backgroundMusic);
         }
     }
