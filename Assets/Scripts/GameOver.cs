@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject backgroundMusic;
-    public GameObject score;
-    public GameObject highScore;
+    public GameObject gamePanelScore;
+    public GameObject gamePanelHighScore;
+    public Text gameOverScore;
+    public Text gameOverHighScore;
 
     public BackgroundMusic m;
 
@@ -22,11 +25,12 @@ public class GameOver : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
-            gameOverPanel.SetActive(true);
-            score.SetActive(false);
-            highScore.SetActive(false);
-            
             Destroy(backgroundMusic);
+            gameOverPanel.SetActive(true);
+            gamePanelScore.SetActive(false);
+            gamePanelHighScore.SetActive(false);
+            gameOverScore.text = "SCORE: " + ScoreManager.score;
+            gameOverHighScore.text = "HIGH SCORE: " + HighScoreManager.highScore;
         }
     }
 
